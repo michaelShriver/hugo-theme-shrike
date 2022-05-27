@@ -1,4 +1,16 @@
-<!--Site Title-->
-<a href="{{ "" | relLangURL}}">{{site.Title}}</a>
-<!--Sub-title-->
-{{with site.Params.subtitle}} / {{.}}{{end}}
+
+<header>
+    <nav>
+    <div class="left">
+        <a href="{{ "" | relLangURL}}">Home</a>
+        {{ range .Site.Menus.topnav }}
+        | <a href="{{.URL}}">{{ .Name }}</a>
+        {{ end }}
+    </div>
+    <div class="right">
+    </div>
+    </nav>
+
+    <h1>{{site.Title}} <span id="headerSubTitle">{{with site.Params.subtitle}}{{.}}{{end}}</span></a></h1>
+
+</header>

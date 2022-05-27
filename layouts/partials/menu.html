@@ -1,0 +1,19 @@
+<nav class="sidebar-nav">
+    {{ $currentPage := . }}
+    <div>
+        <ul>
+            {{ range .Site.Menus.sidenav }}
+            <li><a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "sidenav" .) ($currentPage.HasMenuCurrent "sidenav" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">&rsaquo; {{ .Name }}</a></li>
+                {{ if .HasChildren }}
+                <li><ul>
+                    {{ if or ($currentPage.IsMenuCurrent "sidenav" .) ($currentPage.HasMenuCurrent "sidenav" .) }}
+                        {{ range .Children }}
+                        <li><a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "sidenav" .) ($currentPage.HasMenuCurrent "sidenav" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">&rsaquo; {{ .Name }}</a></li>
+                        {{ end }}
+                    {{ end }}
+                </ul></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</nav>

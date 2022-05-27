@@ -1,5 +1,9 @@
 {{define "main"}}
 
+{{.Content}}
+
+{{ if not .Params.hidelist }}
+
 <!--$paginator-->
 {{$p := .Pages}}
 {{if .IsHome}}
@@ -12,11 +16,13 @@
 <!--list-->
 <ul>
 	{{range $paginator.Pages}}
-	<li>{{.Date.Format "2006-01-02"}} | <a href="{{.RelPermalink}}">{{.Title}}</a></li>
+	<li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
 	{{end}}
 </ul>
 
 <!--pagination-->
 {{template "_internal/pagination.html" .}}
+
+{{end}}
 
 {{end}}
