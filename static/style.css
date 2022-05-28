@@ -1,64 +1,64 @@
 body {
     display: flex;
     flex-wrap: wrap;
-    font-family: sans
+    font-family: monospace;
 }
 
 header {
     flex-basis: 100%;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 article {
     width: 80%;
     flex-basis: 80%;
-    padding-left: 1em
+    padding-left: 1em;
 }
 
 footer {
     flex-basis: 100%;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 header nav {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 nav a, header a {
     text-decoration: none ;
-    color: inherit
+    color: inherit;
 }
 
 header h1 span {
     margin-left: 1em;
     font-size: 50%;
-    font-style: italic
+    font-style: italic;
 }
 
 body > nav {
     flex-basis: content;
     padding-right: 1vw;
-    min-width: 8em
+    min-width: 8em;
 }
 
 nav ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    list-style-position:
-    outside; padding-left: 0
+    list-style-position: outside;
+    padding-left: 0;
 }
 
 nav li ul {
-    padding-left: 0.6em
+    padding-left: 0.6em;
 }
 
 footer {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 a.active {
-    font-style: oblique
+    font-style: oblique;
 }
